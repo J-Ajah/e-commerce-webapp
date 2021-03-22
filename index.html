@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iceshop</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/719954d4ba.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 
@@ -49,11 +51,84 @@
                 <div class="psample">
                     <img  src="/assets/smallPImage.jpg"/>
                 </div>
-                <div class="psample"></div>
-                <div class="psample"></div>
+                <div class="psample">
+                    <img  src="/assets/smallPImage2.jpg"/>
+                </div>
+                <div class="psample">
+                    <img  src="/assets/smallImage3.jpg"/>
+                </div>
             </div>
-            <div class="container-items"></div>
-            <div class="container-items"></div>
+            <div class="container-items">
+                <img id="bigProductImg" src="/assets/BigProductImage.jpg">
+            </div>
+            <div class="container-items">
+                <div id="text">
+                    <h2>Boy's Cardigan with Zip</h2>
+                </div>
+                <div class="ratings">
+                    <a href="">
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star "></i>
+                    <i class="fas fa-star colorChange"></i></a>
+                    <span><a href=""> 28 Reviews</a></span>
+                    
+                </div>
+                <div class="delivery-div">
+                    <h2>Free Delivery <span>on purchase of items worth Ghc400</span> <br>
+                        GH₵ 120 <span style="position:relative; font-size:16px; margin-left: 20px; bottom: 1px; text-decoration: line-through;">200.99</span>
+                    </h2>
+                </div>
+
+
+                <div  class="delivery-div">
+                    <span>Color: Camel <br>
+                       <img src="/assets/colorChange.jpg" alt="">
+                       <br>
+                      <p>
+                        Please select a size:
+                      </p>
+                    </span>
+                    <div class="sizeDiv">
+                        <div class="sizes"> <p>4T</p> </div>
+                        <div class="sizes"><p>3T</p></div>
+                        <div class="sizes"><p>2T</p></div>
+                        <div class="sizes"><p>5</p></div>
+                        <div class="sizes"><p>6</p></div>
+                        <div class="sizes"><p>7</p></div>
+                        <div class="sizes"><p>s</p></div>
+                        <div class="sizes"><p>MT</p></div>
+                        <div class="sizes"><p>L</p></div>
+                        <div class="sizes"><p>XL</p></div>
+                    </div>
+                    
+                    <span id="lastText">Stocks Available : 5</span>
+                    
+                    
+
+                </div>
+
+
+                <!-- product quanity starts here -->
+                <div class="quantity-div">
+                    <a  class="previous round disable-select" onclick="deduct();" >&#8722;</a>
+                    <input type="number" name="" id="num" min="0" max="100">
+                    <a  class="next round disable-select" onclick="add();">&#x2b;</a>
+                </div>
+
+               <div class="btn-div">
+                <button class="btn" id="cart">ADD TO BAG</button><br>
+                <button class="btn" id="cart2">Purchase from a store <br>
+                    <span>Visit a near by store <a href=""> now</a></span>
+                </button>
+               </div>
+                
+
+
+
+                
+            </div>
 
 
 
@@ -62,9 +137,48 @@
 
         </div>
 
-
+      
 
        
+        <!-- footer starts Here -->
+        
+            <div class="footer">
+                  
+                <div class="footerItems center">
+
+                    <div>
+                        <a href="" > <i  class="fas fa-wifi wificon move2 item1"></i></a>
+                    </div>
+                    
+                    <div>
+                        <a href=""><i  class="fab fa-youtube move2 item1"></i></a>
+                    </div>
+                   
+                    <div>
+                        <a href=""><i  class="fab fa-twitter move2 item1"></i></a>
+                    </div>
+                    
+                    <div>
+                        <a href=""><i class="fab fa-facebook-f move2 item1"></i></a>
+    
+                    </div>
+                    <div>
+                        <a href=""><i class="fab fa-instagram move2 item1"></i></a>
+    
+                    </div>
+                    <div>
+                        <a href=""><i  class="fab fa-linkedin-in move2 item1"></i></a>
+                    </div>
+                     
+                     <div>
+                        <a href=""><i  class="fab fa-snapchat-ghost move2 item1"></i></a>
+                    </div>
+                     
+                     <div>
+                        <a href=""><i class="fab fa-pinterest move2 item1"></i></a>
+                    </div>
+            </div>
+        
 
     </div>
     
