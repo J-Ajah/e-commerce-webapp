@@ -138,10 +138,35 @@ body{
     font-family: var(--fonts);
 }
 
+/* Image animation */
+.zoom{
+    overflow: hidden;
+}
+
+.zoom img{
+    transition: transform .5s ease;
+    /* Horizontal style */
+    /* transform-origin:100% 100%; */
+}
+
+.zoom:hover img{
+    transform:scale(1.9)
+    /* Horizontal style */
+    /* translateX(50%); */
+}
+
+
+
+
+/* Image animation */
 .psample{
     border: solid 0px black;
     justify-items: center;
     margin: 10px;
+}
+
+.borderAdd{
+    border: solid 2px green;
 }
 
 .psample img{
@@ -151,13 +176,84 @@ body{
    justify-content:initial;
     left: 15px;  
     margin:auto;
-    border: solid 1px black;  
+    border: solid 0px black;  
 }
-#bigProductImg{
+
+
+/* #bigProductImg{
     width: 100%;
     height:auto;
     border: solid 1px black;  
+} */
+
+
+/* .mySlides {display: none} */
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+/* productImage ends here */
 
 #text, .ratings{
     font-size: 1.3em;
@@ -198,7 +294,7 @@ body{
 }
 
 
-.delivery-div h2{
+.delivery-div h2, #price{
     font-size: 20px;
     line-height: 30px;
     color: rgb(231, 76, 76);
@@ -415,3 +511,155 @@ input[type=number] {
     position: relative;
     left:98px;
 } 
+
+/* Cart starts here */
+
+.Add-to-cart{
+    position:fixed;
+    width:40%;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    left: -10px;
+    top: 0;
+}
+
+
+.cartHide{
+    display:none;
+}
+
+.showCart{
+    display: block;
+}
+
+.cart-top{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #4CAF50;
+    display: flex;
+    flex-direction: row;
+}
+
+.cart-top  p{
+    font-weight: bolder;
+    position: relative;
+    margin: auto;
+    font-size: 27px;
+    font-family:'Times New Roman', Times, serif;
+    width: 40%;
+    color: rgb(255, 251, 251);
+    /* background-color: red; */
+    bottom: 0px;
+}
+
+/* Favicon style */
+.cart-top  i{
+     font-size: 50px;
+     width: 40px;
+     cursor: pointer;
+     /* background-color: rgb(211, 201, 201); */
+     position: relative;
+     right: 20px;
+     text-align: center;
+}
+
+.cart-top  i img{
+    width:20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 30px;
+
+}
+
+.cart-top  img:hover{
+     /* background-color: red; */
+}
+
+.productInfoContainer{
+    display: grid;
+    grid-template-columns: 1fr 50% ;
+    width: 100%;
+    height: 300px;
+    /* background-color: black; */
+    margin: auto;
+    position: relative;
+    top: 60px;
+}
+
+.productInfo{
+    border: solid 1px white;
+}
+
+.productInfo img{
+    width:80%;
+    margin: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.productInfo p{
+     font-size: 20px;
+}
+
+.productPrice{
+    color: red;
+}
+
+.productPrice span{
+  color: black;
+  font-size: 15px;
+  position: relative;
+  bottom: 2px;
+  left: 20px;
+  text-decoration:line-through;
+}
+
+.productInfo #total{
+  text-decoration: underline;
+}
+
+.productInfo #CheckoutLink a{
+    text-decoration: none;
+    
+    
+}
+
+.productInfo #CheckoutLink i {
+    position: relative;
+    color: green;
+    
+    font-size: 15px;
+    /* background-color: #1cec1c; */
+}
+
+.productInfo #CheckoutLink i span{
+    color: black;
+}
+
+
+
+.btnCheckout{
+    width: 70%;
+    height: 50px;
+    position: relative;
+    left: 50px;
+    top: 50px;
+    background-color: #d2e0d2;
+    outline-style: none;
+    border: solid 1px rgb(26, 201, 41);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.btnCheckout:hover{
+    background-color: #4CAF50;
+
+}
+
+
+

@@ -7,12 +7,37 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/719954d4ba.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="javascript/jquery.zoom.min.js"></script>
 </head>
 <body>
+    <div class="Add-to-cart cartHide"> 
+        <div class="cart-top"> 
+          <p>Items in Cart</p>  <i> <img onclick="showCart();" src="/assets//close-button.png" alt=""></i> 
+        </div>
+        <div  class="productInfoContainer">
+            <div class="productInfo">
+                <img src="/assets/bigImage2.jpg" alt="">
+            </div>
+
+            <div class="productInfo">
+                <p>Boy's Still water Sherpa <br> 1/4-zip</p>
+                <p class="productPrice">GH₵ 48.99 <span>₵98</span></p>
+                <p>Qty: 3</p>
+                <p id="total">146.97</p>
+                <p id="CheckoutLink"><a href="">View all Items</a>  <i class="fas fa-shopping-cart">Cart Items:  <span>10</span></i> </p>
+            </div>
+        </div>
+
+         <button class="btnCheckout">Checkout</button>
+         <button class="btnCheckout">Continue Shopping</button>
+    </div>
+
 
     <div class="wrapper">
         <div id="note">
             <h1>Welcome to IceShop. We wish you a good experience</h1>
+
+            
         </div>
 
         <!-- Logo div starts here -->
@@ -47,20 +72,50 @@
 
         <div class="container">
 
+
             <div class="container-items ">
                 <div class="psample">
-                    <img  src="/assets/smallPImage.jpg"/>
+                    <img  onclick="changeImage(this);" src="/assets/smallPImage.jpg"/>
                 </div>
                 <div class="psample">
-                    <img  src="/assets/smallPImage2.jpg"/>
+                    <img onclick="changeImage(this);"  src="/assets/shoe.jpg"/>
                 </div>
                 <div class="psample">
-                    <img  src="/assets/smallImage3.jpg"/>
+                    <img  onclick="changeImage(this);" src="/assets/suits.jpg"/>
                 </div>
             </div>
-            <div class="container-items">
-                <img id="bigProductImg" src="/assets/BigProductImage.jpg">
+
+            <!-- Main product view starts here -->
+            <div  class="container-items  ">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade zoom">
+                     
+                      <img class="bigProductImg img1" src="/assets/BigProductImage.jpg" style="width:100%">
+                     
+                    </div>
+                    
+                    <div class="mySlides fade ">
+                     
+                      <img class="bigProductImg img2" src="/assets/bigImage2.jpg"  style="width:100%">
+                      
+                    </div>
+                    
+                    <div class="mySlides fade ">
+                      
+                      <img class="bigProductImg img3" src="/assets/bigImage3.jpg" style="width:100%">
+                     
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
+                <!-- <img id="bigProductImg" src="/assets/BigProductImage.jpg"> -->
             </div>
+
+
+
             <div class="container-items">
                 <div id="text">
                     <h2>Boy's Cardigan with Zip</h2>
@@ -77,7 +132,7 @@
                 </div>
                 <div class="delivery-div">
                     <h2>Free Delivery <span>on purchase of items worth Ghc400</span> <br>
-                        GH₵ 120 <span style="position:relative; font-size:16px; margin-left: 20px; bottom: 1px; text-decoration: line-through;">200.99</span>
+                        GH₵<span id="price">120</span> <span id="oldPrice" style="position:relative; font-size:16px; margin-left: 20px; bottom: 1px; text-decoration: line-through;">200.99</span>
                     </h2>
                 </div>
 
@@ -118,7 +173,7 @@
                 </div>
 
                <div class="btn-div">
-                <button class="btn" id="cart">ADD TO BAG</button><br>
+                <button class="btn" id="cart" onclick="showCart()">Add to Cart</button><br>
                 <button class="btn" id="cart2">Purchase from a store <br>
                     <span>Visit a near by store <a href=""> now</a></span>
                 </button>
@@ -136,6 +191,11 @@
 
 
         </div>
+
+        
+
+
+        
 
       
 
