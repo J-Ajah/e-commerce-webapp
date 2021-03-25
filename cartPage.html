@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iceshop_CartPage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/719954d4ba.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+</head>
+<body>
+   
+    <div class="wrapper">
+        <div id="note">
+            <h1>Welcome to IceShop. We wish you a good experience</h1>
+
+            
+        </div>
+
+        <!-- Logo div starts here -->
+        <div class="logo-div">
+            <div class="logo-section "> <img style="width:75%; padding-bottom: 20px; " src="/assets/iceshop.png" alt=""></div>
+            <div class="logo-section"></div>
+            <div class="logo-section right">
+                <div class="inner-searchDiv">
+                    <select name="select-item" id="selectItem">
+                        <option value=""> Shirts</option>
+                        <option value=""> Ties</option>
+                        <option value="">Pants</option>
+                </select>
+                <input type="text" name="searchItem" id="searchItem">
+                </div>
+                
+            </div>
+        
+        </div>
+        <div class="nav-div">
+
+            <ul> 
+                <li class="navItems"> <a href="">Boys</a>  </li>
+                <li class="navItems"> <a href="">Women</a></li>
+                <li class="navItems"><a href="">Kids</a></li>
+                <li class="navItems"><a href="">Ties</a></li>
+                <li class="navItems"><a href="">New</a></li>
+            </ul>
+            
+        </div>
+
+<div class="itemsWrapper">
+
+    <div class="productContainer">
+
+        <div class="productHeader">
+            <h4 class="productName">PRODUCT</h4>
+            <h4 class="price">PRICE</h4>
+            <h4 class="quantity">QUANTITY</h4>
+            <h4 class="total">TOTAL</h4>
+
+        </div>
+
+        <div id="products">
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="checkoutDivSummary">
+        <div>
+            <div class = "orderSummary">
+                <h1>Order Summary</h1>
+                <h3><span class="totalItems">10</span> items</h3>
+            </div>
+
+            <div class = "subtotal">
+                <p>Subtotal</p>
+                <p>$489.90</p>
+            </div>
+
+            <div class = "salesTax">
+              <p>Sales Tax</p>
+              <p>$0.00</p>
+          </div>
+          
+          <div class = "estimatedTotal">
+            <p>Total</p>
+            <p>$489.90</p>
+        </div>
+          
+          <span class = "applyPromo">
+              <input type="text" placeholder="Enter promo code">
+              <a href="#"><button style="border-radius: 10px;">Apply</button></a>
+          </span>
+
+          <a href="./404.html"><button id = "checkout">CHECKOUT</button></a>
+                      <p id = "payWith">Or pay with</p>
+                      <span class = "cart__paypal">
+                          <img src="../../assets/pay-paypal.png" alt="Paypal logo">
+                          <img src="../../assets/pay-amazon.png" alt="amazon logo" id = "amazon">
+                          <!-- <i class="fab fa-cc-paypal"></i> -->
+                          <!-- <i class="fab fa-cc-visa"></i> -->
+                      </span>
+                      
+
+    </div>
+
+
+
+
+</div>
+
+      
+
+        
+
+       
+        <!-- footer starts Here -->
+        
+            <div class="footer">
+                  
+                <div class="footerItems center">
+
+                    <div>
+                        <a href="" > <i  class="fas fa-wifi wificon move2 item1"></i></a>
+                    </div>
+                    
+                    <div>
+                        <a href=""><i  class="fab fa-youtube move2 item1"></i></a>
+                    </div>
+                   
+                    <div>
+                        <a href=""><i  class="fab fa-twitter move2 item1"></i></a>
+                    </div>
+                    
+                    <div>
+                        <a href=""><i class="fab fa-facebook-f move2 item1"></i></a>
+    
+                    </div>
+                    <div>
+                        <a href=""><i class="fab fa-instagram move2 item1"></i></a>
+    
+                    </div>
+                    <div>
+                        <a href=""><i  class="fab fa-linkedin-in move2 item1"></i></a>
+                    </div>
+                     
+                     <div>
+                        <a href=""><i  class="fab fa-snapchat-ghost move2 item1"></i></a>
+                    </div>
+                     
+                     <div>
+                        <a href=""><i class="fab fa-pinterest move2 item1"></i></a>
+                    </div>
+            </div>
+            
+        </div>
+        
+
+    </div>
+    
+
+
+    <!-- Javascript link -->
+    <script src="javascript/cart.js"></script>
+</body>
+</html>

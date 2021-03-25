@@ -23,17 +23,13 @@ function deduct(){
 
 
 $(".sizes").click(function(e){
-    console.log(e)
-    
     $(".sizes").css("background-color","")
-    $(this).css("background-color","green")
-    $(this).css("color","white")
+    $(this).css("background-color","lightblue")
+    $(this).css("color","black")
 
 })
 
-// Zoom image code starts here
 
-$('zoom').zoom();
 
 
 // Show cart functionality starts here starts here
@@ -48,23 +44,188 @@ function showCart(){
 
         $(".Add-to-Cart").removeClass("showCart");
         $(".Add-to-Cart").addClass("cartHide");
-        
+
     }
+
+    //parsing display items
+      let name = $("#text h2").text();
+      let price = $(".delivery-div h2 #price").text();
+      let val = $("#num").val();
+      let total = parseInt(price) * parseInt(val);
+    $(".Add-to-cart .productInfoContainer .productInfo .name").text(name);
+    $(".Add-to-cart .productInfoContainer .productInfo .productPrice .p-price").text(price);
+    $(".Add-to-cart .productInfoContainer .productInfo #q #qvalue").text(val);
+    $(".Add-to-cart .productInfoContainer .productInfo #total span").text(total)
+
+
+   
 
    
 }
 
 
+// This function is used to get the product details and store it in a 
+//local storage
+
+//Initializing an empty object
+let products = [{ }];
+let pos = 0;
+
+function getProducts(){
+     productImage =   $(".container-items .slideshow-container .mySlides .img1").attr("src");
+    
+
+    //Checks if the selected product is the first product, second or last product
+    if(String(productImage) === String("/assets/BigProductImage.jpg") ||
+     String(productImage) === String("/assets/bigImage2.jpg") || 
+     String(productImage) === String("/assets/bigImage3.jpg")){
+
+
+        let cartItems = localStorage.getItem('productsInCart');
+        cartItems = JSON.parse(cartItems);
+        // console.log(cartItems);
+         
+        
+        if(cartItems != null){
+
+            if(cartItems[products.tag] == undefined){
+                cartItems = {
+                    ...cartItems,
+                    [products[0].tag]:products
+                }
+            }
+            cartItems['BigProductImage'][0].inCart +=1;
+        }else{
+            //first time
+            products[pos].name =  $("#text h2").text();
+            products[pos].price = $(".delivery-div h2 #price").text();
+            products[pos].tag = "BigProductImage";
+            products[pos].inCart = 1;
+            
+ 
+            cartItems = {
+            [products[pos].tag]:products
+            }
+
+        }
+
+        
+
+        
+
+         localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+        
+
+     }else if(String(productImage) === String("/assets/suits.jpg")){
+
+        // products.name =  $("#text h2").text();
+        // products.price = $(".delivery-div h2 #price").text();
+        // products.inCart = 1;
+
+        let cartItems = localStorage.getItem('productsInCart');
+        cartItems = JSON.parse(cartItems);
+        // console.log(cartItems);
+         
+        
+        if(cartItems != null){
+
+            if(cartItems[products.tag] == undefined){
+                cartItems = {
+                    ...cartItems,
+                    [products[pos].tag]:products
+                }
+            }
+            cartItems['Cardigan'][0].inCart +=1;
+        }else{
+            //set items if nothing is in the database
+            products[pos].name =  $("#text h2").text();
+            products[pos].price = $(".delivery-div h2 #price").text();
+            products[pos].tag = "suits";
+            products[pos].inCart = 1;
+             
+ 
+            cartItems = {
+            [products[pos].tag]:products
+            }
+
+        }
+        // localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+        
+         
+     }else if(String(productImage) === String("/assets/shoe.jpg")){
+
+        // products.name =  $("#text h2").text();
+        // products.price = $(".delivery-div h2 #price").text();
+        // products.inCart = 1;
+        let cartItems = localStorage.getItem('productsInCart');
+        cartItems = JSON.parse(cartItems);
+        
+         
+        //if cart item is null
+        if(cartItems != null){
+           //Also if product is undefined
+            if(cartItems[products.tag] == undefined){
+                
+                var obj = {
+                    name : $("#text h2").text(),
+                    price : $(".delivery-div h2 #price").text(),
+                    tag : "shoe",
+                    inCart : 1
+                }
+                
+                
+                // obj = JSON.stringify(obj);
+                cartItems = {
+                    ...cartItems,
+                    [obj.tag]:[
+                        {
+                            name : obj.name,
+                            price : obj.price,
+                            tag : obj.tag,
+                            inCart: obj.inCart
+                        }
+                    ]
+                    // [products[pos].tag]:products
+                }
+                
+                localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+                
+            }
+ 
+            
+            //Update cart items
+             
+            // checks if the element is undefined and skips the error messaging 
+            if(typeof cartItems["shoe"].inCart == 'undefined'){
+                console.log("Cart is undefined")
+                return;
+            }
+            cartItems["shoe"][0].inCart += 1;
+            localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+        }else{
+            
+            //set items if nothing is in the database
+            products[pos].name =  $("#text h2").text();
+            products[pos].price = $(".delivery-div h2 #price").text();
+            products[pos].tag = "shoe";
+            products[pos].inCart = 1;
+            
+ 
+            cartItems = {
+            [products[pos].tag]:products
+            }
+            // localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+        }
+        
+        
+        localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+     }
+     
+}
+
 
 // declaring product objects
-     let products = [
-         {
-             name: "Cardigan",
-             tag:"Boys Cardigan",
-             price: 15,
-             inCart :0
-         }
-     ]
+     
 
 
 // Listens to the event click of add tag button
@@ -83,7 +244,7 @@ function addCartNumbers(){
         localStorage.setItem("CartNumbers", 1);
         $(".productInfo #CheckoutLink i span").text(1);
      }
-    
+     getProducts();
 }
 
 
@@ -154,8 +315,6 @@ function changeImage(event){
 
 //function to change product details starts here
 function changeDetails(event){
-    console.log(event)
-
     imageSrc = $(event).attr("src");
 
     if(String(imageSrc) === String("/assets/shoe.jpg")){
@@ -186,8 +345,24 @@ function changeDetails(event){
         $(".delivery-div h2 #oldprice").text(200.99);
 
     }
+
+    
+    //Checks if the window has showCart and removes it
+    if($(".Add-to-Cart").hasClass("showCart")){
+
+        $(".Add-to-Cart").removeClass("showCart");
+        $(".Add-to-Cart").addClass("cartHide");
+
+    }
     
 }
+
+
+
+
+
+
+
 
 //Image slides added here
 
@@ -214,7 +389,12 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  changeImage();
-  //dots[slideIndex-1].className += " active";
+
+slides[slideIndex-1].style.display = "block"; 
+
+changeImage();
+  
+
 }
+
+

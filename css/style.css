@@ -18,14 +18,16 @@ body{
 #note{
     width: 100%;
     height: auto;
-    background-color: rgb(20, 173, 79);
+    background-color: rgb(32, 34, 33);
     text-align: center;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-bottom: 0.2px;
     padding-top: 0.5px;
 }
 
 #note h1{
-    font-family:var(--fonts);
+    
     font-size: 16px;
     
 
@@ -52,7 +54,7 @@ body{
 .logo-section{
     width: 50%;
     height: 70px;
-    border: solid 1px black;
+    border: solid 0px black;
 }
 
 .right{
@@ -90,20 +92,26 @@ body{
      cursor: pointer;
      position: relative;
      font-size: 1em;
-     color: rgb(46, 44, 44);
+     color: rgb(243, 243, 243);
     
-     background-color: rgb(72, 197, 120);
+     background-color: rgb(32, 34, 33);
 }
 
 .nav-div{
      width: 100%;
      height: 50px;
-     border:solid 1px black; 
-     background-color: rgb(20, 173, 79);
+     border:solid 0px black; 
+     background-color:  rgb(32, 34, 33);
      font-size: 1.1em;
      font-family: var(--fonts);
-    
-    
+     border-radius: 40px;
+    color:whitesmoke;
+    position: relative;
+    top: 10px;
+}
+.nav-div a{
+    color: rgb(241, 241, 241);
+    font-weight: 200;
 }
 
 .nav-div ul{
@@ -111,8 +119,6 @@ body{
     list-style-type: none;
     margin: auto;
     justify-content: center;
-    
-    
     
 }
 
@@ -125,17 +131,19 @@ body{
 
 .container{
     display: grid;
-    grid-template-columns: 10% 50% 1fr;
+    grid-template-columns: 13% 50% 1fr;
     width: 100%;
     height: 500px;
-    border: solid 1px black;
+    border: solid 0px black;
     margin-top: 20px;
 }
 
 .container-items{
     width: 100%;
-    border: solid 1px black;
+    border: solid 0px black;
     font-family: var(--fonts);
+    position: relative;
+    top: 50px;
 }
 
 /* Image animation */
@@ -162,19 +170,22 @@ body{
 .psample{
     border: solid 0px black;
     justify-items: center;
-    margin: 10px;
+    margin: 16px;
+    width: 70%;
+    
 }
 
 .borderAdd{
-    border: solid 2px green;
+    border: solid 3px rgb(65, 188, 236);
 }
 
 .psample img{
     position: relative;
     max-width: 100%;
     width: 60%;
+    height: 90px;
    justify-content:initial;
-    left: 15px;  
+    left: 25px;  
     margin:auto;
     border: solid 0px black;  
 }
@@ -203,7 +214,7 @@ img {vertical-align: middle;}
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 20px;
   margin-top: -22px;
   color: white;
   font-weight: bold;
@@ -311,7 +322,7 @@ img {vertical-align: middle;}
     width: 20px;
     margin-top:10px;
     cursor: pointer;
-    border: solid 3px green;
+    border: solid 3px rgb(65, 188, 236);
 }
 
 .sizeDiv{
@@ -326,7 +337,7 @@ img {vertical-align: middle;}
     width:40px;
     height: 40px;
     border: solid 1px black;
-    background-color: rgb(227, 243, 225);
+    background-color: rgb(233, 235, 232);
     margin-bottom:5px ;
     text-align: center;
     font-size: 14px;
@@ -335,7 +346,8 @@ img {vertical-align: middle;}
 }
 
 .sizes:hover{
-    background: #4CAF50;
+    background: rgb(32, 34, 33);
+    color: white;
 }
 
 .delivery-div > #lastText{
@@ -381,11 +393,11 @@ input[type=number] {
   }
   
   .quantity-div .previous {
-    background-color: #4CAF50;
+    background-color: rgb(32, 34, 33);
   }
   
   .quantity-div .next {
-    background-color: #4CAF50;
+    background-color: rgb(32, 34, 33);
     
   }
   
@@ -416,12 +428,12 @@ input[type=number] {
 }
 
 #cart{
-    background-color: #4CAF50;
+    background-color: rgb(32, 34, 33);
     font-weight: 600;
     font-size: large;
     outline-style: none;
     border: none;
-    color: rgb(34, 32, 32);
+    color: rgb(231, 229, 229);
 }
 
 .btn{
@@ -446,7 +458,7 @@ input[type=number] {
 .footer{
     width: 100%;
     height: auto    ;
-    background-color: #4CAF50;
+    background-color: rgb(32, 34, 33);
     position: absolute;
     bottom: 0;
     justify-content: center;
@@ -467,7 +479,7 @@ input[type=number] {
 }
 
 .footerItems a{
-    color: rgb(43, 44, 43);
+    color: rgb(238, 238, 238);
 }
 
 .wificon{
@@ -520,7 +532,8 @@ input[type=number] {
     height: 100%;
     background-color: white;
     z-index: 1;
-    left: -10px;
+    right:0;
+    /* left: -10px; */
     top: 0;
 }
 
@@ -537,7 +550,7 @@ input[type=number] {
     position: absolute;
     width: 100%;
     height: 50px;
-    background-color: #4CAF50;
+    background-color: rgb(32, 34, 33);
     display: flex;
     flex-direction: row;
 }
@@ -568,8 +581,10 @@ input[type=number] {
 .cart-top  i img{
     width:20px;
     height: 20px;
-    margin-top: 15px;
-    margin-left: 30px;
+    margin-top: 10px;
+    margin-left: 23px;
+    background-color: whitesmoke;
+    padding: 5px;
 
 }
 
@@ -600,16 +615,21 @@ input[type=number] {
 }
 
 .productInfo p{
-     font-size: 20px;
+     font-size: 24px;
+     font-weight: bold;
 }
 
 .productPrice{
     color: red;
 }
 
-.productPrice span{
+.productPrice q{
+    font-size: 16px;
+}
+
+.productPrice .prev{
   color: black;
-  font-size: 15px;
+  font-size: 20px;
   position: relative;
   bottom: 2px;
   left: 20px;
@@ -622,13 +642,12 @@ input[type=number] {
 
 .productInfo #CheckoutLink a{
     text-decoration: none;
-    
-    
+    font-size: 19px;
 }
 
 .productInfo #CheckoutLink i {
     position: relative;
-    color: green;
+    color: rgb(7, 107, 146);
     
     font-size: 15px;
     /* background-color: #1cec1c; */
@@ -645,10 +664,10 @@ input[type=number] {
     height: 50px;
     position: relative;
     left: 50px;
-    top: 50px;
-    background-color: #d2e0d2;
+    top: 120px;
+    background-color:rgba(233, 233, 233, 0.404);
     outline-style: none;
-    border: solid 1px rgb(26, 201, 41);
+    border: solid 1px rgb(101, 102, 101);
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
@@ -657,9 +676,260 @@ input[type=number] {
 }
 
 .btnCheckout:hover{
-    background-color: #4CAF50;
+    background-color:rgb(51, 51, 51);
+    color: white;
+}
+
+
+
+
+/* ***************************cartPage starts here ***********************/ 
+.itemsWrapper{
+    width: 100%;
+    height: auto;
+    border:solid 0px black;
+    display: grid;
+    grid-template-columns: 90% 30%;
+}
+.productContainer{
+    /* display: flex;
+    flex-direction: column; */
+    
+    border: solid 1px rgb(161, 160, 160);
+    width: 70%;
+    height: auto;
+    border-radius: 20px;
+    position: relative;
+    top: 30px;
+    box-shadow: 1px 1px 5px rgb(172, 169, 169);
+    font-family: var(--fonts);
+    /* background-color: #4CAF50; */
+}
+
+.productHeader{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 3px solid lightgray;
+    height: 60px;
 
 }
+
+.productHeader h4{
+    font-size: 20px;
+    font-family: var(--fonts);
+}
+
+.productName{
+    width: 50%;
+    padding-left:10px;
+    text-align: center;
+}
+
+.price{
+    width: 5%;
+    align-items: center;
+}
+
+.quantity{
+    width: 40%;
+    /* background-color: red; */
+    text-align: center;
+}
+
+.total{
+    width:20%;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.products{
+     border-bottom: solid 3px rgb(223, 216, 216);
+     padding: 10px 5px 10px 10px;
+     position: relative;
+}
+
+.products img {
+    vertical-align: middle;
+    width: 10%;
+}
+
+.products span{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.productContainer .products i{
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+/* Items Price starts here */
+.priceItem{
+    width: 100px;
+    position: relative;
+    margin-top: 15px;
+    left:400px;
+    bottom:80px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.quantitydiv{
+    width:150px;
+    position: relative;
+    left:510px;
+    bottom: 94px;
+    font-size: 16px;
+}
+.quantitydiv i{
+    color: #104e94;
+}
+
+
+.quantity-div span{
+    position: relative;
+    right: 30px;
+}
+
+
+
+
+/* Product Summary starts here */
+.checkoutDivSummary{
+    width: 100%;
+    height: 580px;
+    border: solid 1px rgb(170, 169, 169);
+    position: relative;
+    right: 350px;
+    top: 30px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+
+.orderSummary {
+    background-color:  #104e94;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    margin-bottom: 0px;
+    text-shadow: 2px 2px 5px black;
+    border-radius: 20px 20px 0px 0px;
+  }
+  
+  
+.subtotal,
+.salesTax,
+.estimatedTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-left:30px;
+  padding-right:40px;
+  font-size: 20px;
+  margin: -15;
+}
+
+
+.applyPromo input,
+.applyPromo button {
+  padding:8px;
+  outline: 0;
+  border: 0;
+}
+
+.applyPromo input {
+    border: 1px solid #333;
+    border-radius: 20px;
+    font-size: 16px;
+
+  }
+
+
+.applyPromo button {
+    background-color:  #104e94;
+    color: white;
+    cursor: pointer;
+  } 
+
+.applyPromo{
+    margin-left: 11px;
+    position: relative;
+    top: 10px;
+    border-radius: 10px;
+}
+
+
+#payWith {
+    text-align: center;
+  }
+
+#checkout {
+    margin-top: 2rem;
+    width: 70%;
+    padding: 20px 10px;
+    cursor: pointer;
+    margin-left: 60px;
+    background-color:  #104e94;
+    color: rgb(226, 223, 223);
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+
+  .cart__paypal {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .cart__paypal img {
+    width: 42.5%;
+    border: 0px solid #333;
+    padding: 0.5rem 1rem;
+  }
+  
+  .cart__paypal img:hover {
+    cursor: pointer;
+  }
+  
+  .cart__paypal img:first-of-type {
+    margin-right: 0px;
+  }
+  
+  #amazon {
+    margin-top: 5px;
+    border: 0px solid #333;
+    border-radius: 3px;
+    padding: 0;
+    height: auto;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
