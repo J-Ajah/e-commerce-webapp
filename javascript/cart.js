@@ -24,8 +24,9 @@ function displayCart()  {
                   <span> ${item[0].inCart} </span>
                   <i class="fa fa-plus" aria-hidden="true"></i>
 
-                
+                  <span class="totalItems"> ${item[0].price * item[0].inCart} </span>
                 </div>
+                 
             </div>
             
 

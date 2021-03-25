@@ -588,9 +588,8 @@ input[type=number] {
 
 }
 
-.cart-top  img:hover{
-     /* background-color: red; */
-}
+
+
 
 .productInfoContainer{
     display: grid;
@@ -794,6 +793,12 @@ input[type=number] {
 .quantity-div span{
     position: relative;
     right: 30px;
+}
+
+.totalItems{
+    left: 200px;
+    position: relative;
+    font-size: bold;
 }
 
 

@@ -56,6 +56,7 @@ function showCart(){
     $(".Add-to-cart .productInfoContainer .productInfo .productPrice .p-price").text(price);
     $(".Add-to-cart .productInfoContainer .productInfo #q #qvalue").text(val);
     $(".Add-to-cart .productInfoContainer .productInfo #total span").text(total)
+    $(".productInfo img").attr("src",$(".container-items .slideshow-container .mySlides .img1").attr("src"));
 
 
    
@@ -87,14 +88,49 @@ function getProducts(){
          
         
         if(cartItems != null){
-
+            
+            let count = cartItems['BigProductImage'][0].inCart;
+            count = count + 1;
+           //Also if product is undefined
             if(cartItems[products.tag] == undefined){
+                
+                var obj = {
+                    name : $("#text h2").text(),
+                    price : $(".delivery-div h2 #price").text(),
+                    tag : "BigProductImage",
+                    inCart : 1
+                }
+                
+                
+                // obj = JSON.stringify(obj);
                 cartItems = {
                     ...cartItems,
-                    [products[0].tag]:products
+                    [obj.tag]:[
+                        {
+                            name : obj.name,
+                            price : obj.price,
+                            tag : obj.tag,
+                            inCart: count
+                        }
+                    ]
+                    // [products[pos].tag]:products
                 }
+                
+                localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+                
             }
-            cartItems['BigProductImage'][0].inCart +=1;
+ 
+            
+            //Update cart items
+             
+          
+            
+           // cartItems["shoe"][0].inCart += 1;
+            
+           
+            
+            cartItems['BigProductImage'][0].inCart = count;
+            localStorage.setItem("productsInCart",JSON.stringify(cartItems));
         }else{
             //first time
             products[pos].name =  $("#text h2").text();
@@ -104,6 +140,7 @@ function getProducts(){
             
  
             cartItems = {
+                ...cartItems,
             [products[pos].tag]:products
             }
 
@@ -128,14 +165,49 @@ function getProducts(){
          
         
         if(cartItems != null){
-
+            
+            let count = cartItems['shoe'][0].inCart;
+            count = count + 1;
+           //Also if product is undefined
             if(cartItems[products.tag] == undefined){
+                
+                var obj = {
+                    name : $("#text h2").text(),
+                    price : $(".delivery-div h2 #price").text(),
+                    tag : "suits",
+                    inCart : 1
+                }
+                
+                
+                // obj = JSON.stringify(obj);
                 cartItems = {
                     ...cartItems,
-                    [products[pos].tag]:products
+                    [obj.tag]:[
+                        {
+                            name : obj.name,
+                            price : obj.price,
+                            tag : obj.tag,
+                            inCart: count
+                        }
+                    ]
+                    // [products[pos].tag]:products
                 }
+                
+                localStorage.setItem("productsInCart",JSON.stringify(cartItems));
+                
             }
-            cartItems['Cardigan'][0].inCart +=1;
+ 
+            
+            //Update cart items
+             
+          
+            
+           // cartItems["shoe"][0].inCart += 1;
+            
+           
+            
+            cartItems['shoe'][0].inCart = count;
+            localStorage.setItem("productsInCart",JSON.stringify(cartItems));
         }else{
             //set items if nothing is in the database
             products[pos].name =  $("#text h2").text();
@@ -145,6 +217,7 @@ function getProducts(){
              
  
             cartItems = {
+                ...cartItems,
             [products[pos].tag]:products
             }
 
@@ -162,7 +235,10 @@ function getProducts(){
         
          
         //if cart item is null
-        if(cartItems != null){
+        if(cartItems != null && typeof cartItems['shoe'] != 'undefined'){
+            
+            let count = cartItems['shoe'][0].inCart;
+            count = count + 1;
            //Also if product is undefined
             if(cartItems[products.tag] == undefined){
                 
@@ -182,7 +258,7 @@ function getProducts(){
                             name : obj.name,
                             price : obj.price,
                             tag : obj.tag,
-                            inCart: obj.inCart
+                            inCart: count
                         }
                     ]
                     // [products[pos].tag]:products
@@ -195,12 +271,13 @@ function getProducts(){
             
             //Update cart items
              
-            // checks if the element is undefined and skips the error messaging 
-            if(typeof cartItems["shoe"].inCart == 'undefined'){
-                console.log("Cart is undefined")
-                return;
-            }
-            cartItems["shoe"][0].inCart += 1;
+          
+            
+           // cartItems["shoe"][0].inCart += 1;
+            
+           
+            
+            cartItems['shoe'][0].inCart = count;
             localStorage.setItem("productsInCart",JSON.stringify(cartItems));
         }else{
             
@@ -212,6 +289,7 @@ function getProducts(){
             
  
             cartItems = {
+                ...cartItems,
             [products[pos].tag]:products
             }
             // localStorage.setItem("productsInCart",JSON.stringify(cartItems));
@@ -396,5 +474,7 @@ changeImage();
   
 
 }
+
+
 
 
