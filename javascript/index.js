@@ -55,7 +55,7 @@ function showCart(){
     $(".Add-to-cart .productInfoContainer .productInfo .name").text(name);
     $(".Add-to-cart .productInfoContainer .productInfo .productPrice .p-price").text(price);
     $(".Add-to-cart .productInfoContainer .productInfo #q #qvalue").text(val);
-    $(".Add-to-cart .productInfoContainer .productInfo #total span").text(total)
+    $(".Add-to-cart .productInfoContainer .productInfo #total span").text(total.toString())
     $(".productInfo img").attr("src",$(".container-items .slideshow-container .mySlides .img1").attr("src"));
 
 

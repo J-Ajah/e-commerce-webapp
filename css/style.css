@@ -742,52 +742,77 @@ input[type=number] {
     /* background-color: red; */
 }
 
+.current{
+    transform: scale(1.0);
+    color:red;
+    font-size: large;
+    
+}
+
+
 .products{
      border-bottom: solid 3px rgb(223, 216, 216);
      padding: 10px 5px 10px 10px;
      position: relative;
+     display: flex;
+     align-items: center;
+}
+
+.productContainer .products i{
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+    cursor: pointer;
 }
 
 .products img {
     vertical-align: middle;
-    width: 10%;
+    width: 120px;
+    margin-left: 10px;
+    padding: 0px;
 }
+
 
 .products span{
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
     margin-left: 20px;
 }
 
-.productContainer .products i{
-    font-size: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    cursor: pointer;
-}
-
-
-/* Items Price starts here */
-.priceItem{
-    width: 100px;
+.products > .priceItem{
     position: relative;
-    margin-top: 15px;
-    left:400px;
-    bottom:80px;
-    font-size: large;
+    position: absolute;
     font-weight: bold;
+    left: 400px;
 }
 
 .quantitydiv{
-    width:150px;
-    position: relative;
-    left:510px;
-    bottom: 94px;
-    font-size: 16px;
+    position: absolute;
+    left:550px;
 }
+
 .quantitydiv i{
     color: #104e94;
 }
+
+.quantitydiv span{
+    margin-right:20px;
+}
+
+.totalItems{
+    right: 0;
+    position: absolute;
+    font-size: bold;
+    margin-right: 60px;
+}
+
+/* 
+
+/* Items Price starts here 
+
+
+
+
 
 
 .quantity-div span{
@@ -795,12 +820,8 @@ input[type=number] {
     right: 30px;
 }
 
-.totalItems{
-    left: 200px;
-    position: relative;
-    font-size: bold;
-}
 
+ */
 
 
 
