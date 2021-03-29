@@ -77,9 +77,9 @@ function getProducts(){
     
 
     //Checks if the selected product is the first product, second or last product
-    if(String(productImage) === String("/assets/BigProductImage.jpg") ||
-     String(productImage) === String("/assets/bigImage2.jpg") || 
-     String(productImage) === String("/assets/bigImage3.jpg")){
+    if(String(productImage) === String("assets/BigProductImage.jpg") ||
+     String(productImage) === String("assets/bigImage2.jpg") || 
+     String(productImage) === String("assets/bigImage3.jpg")){
 
 
         let cartItems = localStorage.getItem('productsInCart');
@@ -153,7 +153,7 @@ function getProducts(){
          localStorage.setItem("productsInCart",JSON.stringify(cartItems));
         
 
-     }else if(String(productImage) === String("/assets/suits.jpg")){
+     }else if(String(productImage) === String("assets/suits.jpg")){
 
         // products.name =  $("#text h2").text();
         // products.price = $(".delivery-div h2 #price").text();
@@ -225,7 +225,7 @@ function getProducts(){
         // localStorage.setItem("productsInCart",JSON.stringify(cartItems));
         
          
-     }else if(String(productImage) === String("/assets/shoe.jpg")){
+     }else if(String(productImage) === String("assets/shoe.jpg")){
 
         // products.name =  $("#text h2").text();
         // products.price = $(".delivery-div h2 #price").text();
@@ -335,13 +335,13 @@ function changeImage(event){
       let imageSrc  = $(event).attr("src");
       let currentDiv;
       
-      if(String(imageSrc) === String("/assets/smallPImage.jpg")){
+      if(String(imageSrc) === String("assets/smallPImage.jpg")){
            
 
-        $(".mySlides .img1").attr("src","/assets/BigProductImage.jpg");
+        $(".mySlides .img1").attr("src","assets/BigProductImage.jpg");
 
-        $(".mySlides  .img2").attr("src","/assets/bigImage2.jpg")
-        $(".mySlides  .img3").attr("src","/assets/bigImage3.jpg")
+        $(".mySlides  .img2").attr("src","assets/bigImage2.jpg")
+        $(".mySlides  .img3").attr("src","assets/bigImage3.jpg")
 
             currentDiv =   $(event).parent().addClass("borderAdd");
 
@@ -354,9 +354,9 @@ function changeImage(event){
             previous = currentDiv;
            }
            
-      }else if(String(imageSrc) === String("/assets/shoe.jpg")){
+      }else if(String(imageSrc) === String("assets/shoe.jpg")){
 
-            $(".mySlides .bigProductImg").attr("src","/assets/shoe.jpg");
+            $(".mySlides .bigProductImg").attr("src","assets/shoe.jpg");
            
              currentDiv =$(event).parent().addClass("borderAdd");
         
@@ -372,8 +372,8 @@ function changeImage(event){
              }
              
 
-      }else if(String(imageSrc) === String("/assets/suits.jpg")){
-        $(".mySlides .bigProductImg").attr("src","/assets/suits.jpg");
+      }else if(String(imageSrc) === String("assets/suits.jpg")){
+        $(".mySlides .bigProductImg").attr("src","assets/suits.jpg");
         
         currentDiv =   $(event).parent().addClass("borderAdd");
 
@@ -395,7 +395,7 @@ function changeImage(event){
 function changeDetails(event){
     imageSrc = $(event).attr("src");
 
-    if(String(imageSrc) === String("/assets/shoe.jpg")){
+    if(String(imageSrc) === String("assets/shoe.jpg")){
         //name of product
         $("#text h2").text("Uk made Shoes");
         //price on dicount
@@ -404,7 +404,7 @@ function changeDetails(event){
         $(".delivery-div h2 #oldprice").text(280.99);
        
     }
-    else if(String(imageSrc) === String("/assets/suits.jpg")){
+    else if(String(imageSrc) === String("assets/suits.jpg")){
         
          //name of product
          $("#text h2").text("Corporate Office Suits");
@@ -413,7 +413,7 @@ function changeDetails(event){
          //previous  price
          $(".delivery-div h2 #oldprice").text(780.99);
 
-    }else if(String(imageSrc) === String("/assets/smallPImage.jpg")){
+    }else if(String(imageSrc) === String("assets/smallPImage.jpg")){
         //name of product
         $("#text h2").text("Boy's Cardigan with Zip");
           
